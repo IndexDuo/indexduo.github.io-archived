@@ -30,7 +30,6 @@ function App() {
             <Routes>
               
                 {/* Define existing routes here */}
-                <Route path="/" element={<Home />} />
                 
                 {/* Catch-all route for undefined paths */}
                 <Route path="*" element={<NotFoundPage />} />
