@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import Projects from './Projects';
 
 const ProjectGrid = ({ projectsData }) => {
   const gridRef = useRef(null); // Reference to the project grid for scrolling control
@@ -28,7 +29,7 @@ const ProjectGrid = ({ projectsData }) => {
 
   return (
     <div ref={gridRef} className="projects-grid">
-      {/* Render your project items here */}
+      <Projects projectsData={projectsData} />
     </div>
   );
 };
