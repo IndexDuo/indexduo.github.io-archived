@@ -1,7 +1,9 @@
 import React from 'react';
 import Collapsible from '../Effects/Collapsible/Collapsible.jsx';
-import ProjectDisplay from '../Effects/ProjectDisplay/ProjectDisplay.jsx';
+import Project from './Project.jsx'; // Assuming Project handles the grid with horizontal scrolling
+import './ProjectsGrid.css'; 
 
+// Define your projects data
 const projectsData = [
   {
     image: { src: 'path/to/project1.png', link: 'http://project1.com' },
@@ -24,23 +26,20 @@ function Projects() {
       <h1>What I do</h1>
       <p>This is the projects page.</p>
       <Collapsible title="Web Design">
-        <p>Details</p>
+        <p>Details about Web Design...</p>
       </Collapsible>
       <Collapsible title="Web Development">
-        <p>Details</p>
+        <p>Details about Web Development...</p>
       </Collapsible>
       <Collapsible title="UI/UX Design">
-        <p>Details</p>
+        <p>Details about UI/UX Design...</p>
       </Collapsible>
       <Collapsible title="Accessibility">
-        <p>Details</p>
+        <p>Details about Accessibility...</p>
       </Collapsible>
       
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-        {projectsData.map((project, index) => (
-          <ProjectDisplay key={index} {...project} />
-        ))}
-      </div>
+      {/* Render the Project component here, passing projectsData as a prop */}
+      <Project projectsData={projectsData} />
       
     </div>
   );
