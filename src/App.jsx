@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import { Link, Element } from 'react-scroll'; //import link and element to scroll to different sections of the page
+import { Link, Element } from 'react-scroll';
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; //import browser router to navigate between pages
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
@@ -11,7 +11,6 @@ import NotFoundPage from './components/errorPage/NotFoundPage';
 
 function App() {
   return (
-    
     <div>
       <nav>
         <ul>
@@ -26,15 +25,14 @@ function App() {
       <Element name="about"><About /></Element>
       <Element name="projects"><Projects /></Element>
       <Element name="contact"><Contact /></Element>
+      
+      {/* Only include Router if you have other distinct pages outside of the main SPA */}
       <Router>
-            <Routes>
-              
-                {/* Define existing routes here */}
-                
-                {/* Catch-all route for undefined paths */}
-                <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-        </Router>
+        <Routes>
+          {/* Catch-all route for undefined paths, useful for displaying a NotFoundPage */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
