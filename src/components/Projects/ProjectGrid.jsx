@@ -12,12 +12,13 @@ const ProjectGrid = ({ projectsData }) => {
         gridRef.current.scrollLeft += e.deltaY;
       }
     };
-
+  
     const grid = gridRef.current;
     grid.addEventListener('wheel', handleWheel);
-
-    return () => grid.removeEventListener('wheel', handleWheel);
+  
+    return () => grid && grid.removeEventListener('wheel', handleWheel);
   }, []);
+  
 
   return (
     <div ref={gridRef} className="projects-grid">
