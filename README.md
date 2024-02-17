@@ -1,4 +1,6 @@
-# Getting Started with Create React App??
+notes for myself...
+use npm run deploy to build the prject and output to the 'gh-pages' branch
+# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
