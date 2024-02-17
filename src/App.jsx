@@ -19,6 +19,7 @@ function App() {
           <li><Link to="contact" smooth={true} duration={500}>Contact</Link></li>
         </ul>
       </nav>
+      
       <Element name="home"><Home /></Element>
       <Element name="about"><About /></Element>
       <Element name="projects"><Projects /></Element>
