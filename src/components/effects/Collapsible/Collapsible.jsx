@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './Collapsible.module.css';
 
 const Collapsible = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,11 +8,11 @@ const Collapsible = ({ title, children }) => {
 
   return (
     <div>
-      <button onClick={toggle} style={{ cursor: 'pointer', width: '100%', textAlign: 'left' }}>
+      <button onClick={toggle} className={styles.collapsibleButton}>
         {title}
       </button>
       {isOpen && (
-        <div style={{ padding: '0 15px' }}>
+        <div className={styles.contentContainer}>
           {children}
         </div>
       )}

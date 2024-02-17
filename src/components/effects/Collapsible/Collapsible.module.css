@@ -1,0 +1,17 @@
+.collapsibleButton {
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    background-color: #f9f9f9;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .contentContainer {
+    padding: 0 15px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  
