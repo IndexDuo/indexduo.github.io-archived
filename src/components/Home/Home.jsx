@@ -3,8 +3,8 @@ import React from 'react';
 function Home() {
   return (
     <div>
-      <h1>Welcome to My Portfolio</h1>
-      <p>This is the home page of my portfolio where I showcase my work!</p>
+      <h1>HI I'M JING LI</h1>
+      <p>A web and UI/UX designer.</p>
     </div>
   );
 }

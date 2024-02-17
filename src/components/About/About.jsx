@@ -3,7 +3,8 @@ import React from 'react';
 function About() {
   return (
     <div>
-      <p>This is the about page of my portfolio where I talk about myself.</p>
+      <h1>About Me</h1>
+      <p>I believe in...</p>
     </div>
   );
 }
