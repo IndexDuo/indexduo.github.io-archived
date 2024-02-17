@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { Link, Element } from 'react-scroll'; //import link and element to scroll to different sections of the page
 
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; //import browser router to navigate between pages
 import Home from './components/Home/Home';
@@ -12,16 +13,16 @@ function App() {
     <div>
       <nav>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><Link to="home" smooth={true} duration={500}>Home</Link></li>
+          <li><Link to="about" smooth={true} duration={500}>About</Link></li>
+          <li><Link to="projects" smooth={true} duration={500}>Projects</Link></li>
+          <li><Link to="contact" smooth={true} duration={500}>Contact</Link></li>
         </ul>
       </nav>
-      <section id="home">Home Section Content</section>
-      <section id="about">About Section Content</section>
-      <section id="projects">Projects Section Content</section>
-      <section id="contact">Contact Section Content</section>
+      <Element name="home">Home Section Content</Element>
+      <Element name="about">About Section Content</Element>
+      <Element name="projects">Projects Section Content</Element>
+      <Element name="contact">Contact Section Content</Element>
     </div>
   );
 }
