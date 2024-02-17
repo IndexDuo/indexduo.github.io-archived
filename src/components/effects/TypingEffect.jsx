@@ -5,7 +5,7 @@ const TypingEffect = () => {
     const [subIndex, setSubIndex] = useState(0);
     const [reverse, setReverse] = useState(false);
     const [blink, setBlink] = useState(true);
-    const roles = ["Web Designer", "UI/UX Designer", "Gamer", "etc."]; // Add more roles as needed
+    const roles = [" Web Designer.", " UI/UX Designer.", " student.", "n orange."]; // Add more roles as needed
 
     // Blinking effect
     useEffect(() => {
@@ -17,30 +17,35 @@ const TypingEffect = () => {
 
     // Typing effect
     useEffect(() => {
-        if (index === roles.length) setIndex(0);
-        if (subIndex === roles[index].length + 1 && 
-            !reverse) {
+      if (index >= roles.length) setIndex(0); // Reset to first role after the last one
+      const currentRole = roles[index];
+      
+      // Start deleting after typing the full role
+      if (subIndex === currentRole.length + 1 && !reverse) {
           setReverse(true);
           return;
-        }
-        if (subIndex === 0 && reverse) {
+      }
+
+      // Move to the next role after deleting the current one
+      if (subIndex === 0 && reverse) {
           setReverse(false);
-          setIndex((prev) => prev + 1);
+          setIndex((prevIndex) => (prevIndex + 1) % roles.length);
           return;
-        }
+      }
 
-        const timeout = setTimeout(() => {
-          setSubIndex((prev) => prev + (reverse ? -1 : 1));
-        }, Math.max(reverse ? 75 : subIndex === roles[index].length ? 1000 : 150, parseInt(Math.random() * 350)));
+      // Typing effect timing
+      const timeout = setTimeout(() => {
+          setSubIndex((prevSubIndex) => prevSubIndex + (reverse ? -1 : 1));
+      }, reverse ? 75 : 150); // Faster deletion, slower typing
 
-        return () => clearTimeout(timeout);
-    }, [subIndex, index, reverse, roles]);
+      return () => clearTimeout(timeout);
+  }, [subIndex, index, reverse, roles]);
 
-    return (
-        <h1>
-            I am a {`${roles[index].substring(0, subIndex)}${blink ? "|" : " "}`}
-        </h1>
-    );
+  return (
+      <h1>
+          I am a{`${roles[index].substring(0, subIndex)}${blink ? "|" : " "}`}
+      </h1>
+  );
 };
 
 export default TypingEffect;
