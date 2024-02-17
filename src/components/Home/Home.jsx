@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Link } from 'react-router-dom'; //navigate between pages
-import TypingEffect from '../effects/TypingEffect.jsx';
+import TypingEffect from '../Effects/TypingEffect.jsx';
 
 
 function Home() {
