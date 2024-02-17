@@ -7,7 +7,7 @@ import Home from './components/Home/Home';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
-import NotFoundPage from './components/errorPage/NotFoundPage';
+// import NotFoundPage from './components/errorPage/NotFoundPage';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
       <Router>
         <Routes>
           {/* Catch-all route for undefined paths, useful for displaying a NotFoundPage */}
-          <Route path="*" element={<NotFoundPage />} />
+          {/* <Route path="*" element={<NotFoundPage />} /> */}
         </Routes>
       </Router>
     </div>
